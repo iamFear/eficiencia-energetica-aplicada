@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/ContactSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects, services, supplementaryProjects } from '../data/site';
+
+const featuredProjects = [projects[4], projects[8], projects[0], projects[16], projects[14], projects[11]];
+---
+
+<BaseLayout title="Eficiencia Energética Aplicada | Ingeniería para usar mejor la energía">
+  <main id="inicio">
+    <section class="hero hero-photo">
+      <img src="/images/source/brochure-p01-01.jpg" alt="Proyectos de energía solar térmica de Eficiencia Energética Aplicada" />
+      <div class="hero-overlay"></div>
+      <div class="hero-copy section-wrap">
+        <p class="eyebrow accent">INGENIERÍA · ENERGÍA · CONFORT</p>
+        <h1>Menos consumo.<br /><em>Más bienestar.</em></h1>
+        <p>Diseñamos soluciones para aprovechar el sol, reducir costos de operación y hacer más eficientes hogares, hoteles, hospitales, piscinas y proyectos de vivienda.</p>
+        <div class="hero-actions">
+          <a class="button button-accent" href="#contacto">Solicitar diagnóstico <span>↗</span></a>
+          <a class="text-link light-link" href="/proyectos/">Explorar 18 proyectos <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-proof section-wrap">
+        <div><strong>1985–2013</strong><span>Trayectoria documentada en el portafolio suministrado</span></div>
+        <div><strong>18</strong><span>Obras con ficha técnica y registro fotográfico</span></div>
+        <div><strong>10+</strong><span>Ciudades con proyectos de distintas escalas</span></div>
+      </div>
+    </section>
+
+    <section class="intro section-wrap" id="experiencia">
+      <p class="eyebrow">EFICIENCIA ENERGÉTICA APLICADA</p>
+      <div class="intro-grid">
+        <h2>La solución correcta comienza por entender <em>cómo se consume.</em></h2>
+        <div>
+          <p>Integramos energía solar térmica y fotovoltaica, bombas de calor, iluminación eficiente, climatización, gestión de agua y criterios bioclimáticos. Cada propuesta parte de la demanda, las condiciones del lugar y la continuidad que necesita la operación.</p>
+          <p class="authority"><b>Ing. Jorge Enrique Bernal Trujillo</b><br />Asesor en Eficiencia Energética</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-overview" id="soluciones">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow accent-dark">SOLUCIONES INTEGRALES</p><h2>Una estrategia completa para <em>cada recurso.</em></h2></div>
+          <div><p>Desde agua caliente y electricidad hasta residuos, iluminación y confort térmico.</p><a class="text-link" href="/soluciones/">Ver todas las soluciones <span>↗</span></a></div>
+        </div>
+        <div class="service-list">
+          {services.map((service) => (
+            <a class="service-row" href={`/soluciones/${service.slug}/`}>
+              <span>{service.number}</span><h3>{service.title}</h3><p>{service.short}</p><b>↗</b>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="solar-explainer section-wrap">
+      <div class="explainer-image"><img src="/images/projects/edificio-ankara-bogota.jpg" alt="Campo de colectores solares del Edificio Ankara en Bogotá" loading="lazy" /></div>
+      <div class="explainer-copy">
+        <p class="eyebrow">POR QUÉ ENERGÍA SOLAR TÉRMICA</p>
+        <h2>El calor del sol trabaja <em>todos los días.</em></h2>
+        <p>Para agua por debajo de 60 °C, la energía solar térmica puede atender duchas, cocina, lavandería, procesos institucionales y piscinas. Un sistema bien dimensionado acumula la energía disponible y combina respaldo solo cuando hace falta.</p>
+        <ul class="check-list"><li>Fuente limpia, renovable y abundante</li><li>Sin costo de combustible solar</li><li>Compatible con bomba de calor o respaldo convencional</li><li>Aplicable en construcciones nuevas o existentes</li></ul>
+        <a class="button" href="/soluciones/calentamiento-solar/">Entender el sistema <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <div class="section-wrap">
+        <p class="eyebrow accent">COMPARACIÓN DE FUENTES DE CALOR</p>
+        <h2>Elegir bien cambia el costo de <em>toda la operación.</em></h2>
+        <div class="comparison-table" role="table" aria-label="Comparación de fuentes de calor">
+          <div class="comparison-row comparison-head" role="row"><span>Criterio</span><b>Solar</b><b>Gas</b><b>Resistencia eléctrica</b></div>
+          <div class="comparison-row" role="row"><span>Fuente</span><b>Sol</b><b>Combustible</b><b>Electricidad</b></div>
+          <div class="comparison-row" role="row"><span>Costo del calor</span><b>Bajo en operación</b><b>Alto</b><b>Muy alto</b></div>
+          <div class="comparison-row" role="row"><span>Emisiones directas de GEI</span><b>Cero</b><b>Altas</b><b>Dependientes de la red</b></div>
+          <div class="comparison-row" role="row"><span>Obtención de calor</span><b>Gradual</b><b>Rápida</b><b>Media</b></div>
+          <div class="comparison-row" role="row"><span>Almacenamiento</span><b>Alto</b><b>Bajo</b><b>Medio</b></div>
+          <div class="comparison-row" role="row"><span>Mantenimiento</span><b>Simple</b><b>Complejo</b><b>Bajo</b></div>
+        </div>
+        <p class="source-note">Síntesis del comparativo incluido en el documento técnico suministrado. El desempeño final depende del diseño, la energía de respaldo y las condiciones del proyecto.</p>
+      </div>
+    </section>
+
+    <section class="projects-home">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">PORTAFOLIO DOCUMENTADO</p><h2>Experiencia que se puede <em>ver y medir.</em></h2></div>
+          <div><p>Proyectos hoteleros, hospitalarios, residenciales, educativos y deportivos.</p><a class="text-link" href="/proyectos/">Ver portafolio completo <span>→</span></a></div>
+        </div>
+        <div class="project-grid">{featuredProjects.map(project => <ProjectCard project={project} />)}</div>
+      </div>
+    </section>
+
+    <section class="process section-wrap">
+      <div><p class="eyebrow">MÉTODO DE TRABAJO</p><h2>De la necesidad a una solución <em>operable.</em></h2></div>
+      <ol><li><span>01</span><div><h3>Diagnóstico</h3><p>Revisión de consumos, temperaturas, horarios, equipos existentes y condiciones del lugar.</p></div></li><li><span>02</span><div><h3>Diseño</h3><p>Selección tecnológica, dimensionamiento, acumulación, respaldo y estimación de desempeño.</p></div></li><li><span>03</span><div><h3>Implementación</h3><p>Coordinación técnica para integrar los equipos con la infraestructura del proyecto.</p></div></li><li><span>04</span><div><h3>Operación</h3><p>Recomendaciones de uso y mantenimiento para conservar los ahorros y la calidad del servicio.</p></div></li></ol>
+    </section>
+
+    <section class="additional-projects section-wrap">
+      <div><p class="eyebrow">OTROS REGISTROS DEL BROCHURE</p><h2>Más instalaciones del <em>portafolio.</em></h2></div>
+      <div class="simple-grid">{supplementaryProjects.map(project => <article><h3>{project.name}</h3><p>{project.note}</p></article>)}</div>
+    </section>
+
+    <ContactSection />
+  </main>
+</BaseLayout>

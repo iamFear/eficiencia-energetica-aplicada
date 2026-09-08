@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects, type Project } from '../../data/site';
+
+export function getStaticPaths() {
+  return projects.map(project => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props as { project: Project };
+const related = projects.filter(item => item.category === project.category && item.slug !== project.slug).slice(0, 3);
+---
+<BaseLayout title={`${project.name} | Proyectos EEA`} description={`${project.solution} en ${project.name}, ${project.city}.`}>
+  <main id="inicio">
+    <section class="project-detail-hero section-wrap">
+      <a class="back-link" href="/proyectos/">← Todos los proyectos</a>
+      <div class="detail-title"><div><p class="eyebrow accent-dark">{project.category} · {project.year}</p><h1>{project.name}</h1><p>{project.summary}</p></div><div class="detail-number">{project.year}</div></div>
+      <img src={project.image} alt={`Registro fotográfico de ${project.name}`} width="1230" height="820" />
+    </section>
+    <section class="project-facts section-wrap">
+      <div><span>Ubicación</span><strong>{project.city}, {project.country}</strong></div>
+      <div><span>Solución</span><strong>{project.solution}</strong></div>
+      <div><span>Capacidad documentada</span><strong>{project.capacity}</strong></div>
+      <div><span>Año</span><strong>{project.year}</strong></div>
+    </section>
+    <section class="detail-story section-wrap"><div><p class="eyebrow">LECTURA DEL PROYECTO</p><h2>La escala define el <em>sistema.</em></h2></div><div><p>En aplicaciones de agua caliente o climatización de piscina, el campo de colectores y el volumen de acumulación se dimensionan de acuerdo con la demanda diaria, la radiación disponible y el nivel de continuidad requerido.</p><p>La ficha reproduce exclusivamente la información registrada en el brochure corporativo. Para una evaluación actual se requiere verificar el estado de la instalación, sus consumos y las condiciones operativas vigentes.</p></div></section>
+    {related.length > 0 && <section class="related section-wrap"><div class="section-heading"><div><p class="eyebrow">PROYECTOS RELACIONADOS</p><h2>Más experiencia en <em>{project.category.toLowerCase()}.</em></h2></div></div><div class="project-grid">{related.map(item => <ProjectCard project={item} />)}</div></section>}
+    <ContactSection />
+  </main>
+</BaseLayout>

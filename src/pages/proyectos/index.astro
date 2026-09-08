@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects, supplementaryProjects } from '../../data/site';
+
+const categories = [...new Set(projects.map(project => project.category))];
+---
+<BaseLayout title="Proyectos | Eficiencia Energética Aplicada" description="Portafolio documentado de sistemas solares térmicos y climatización eficiente.">
+  <main id="inicio">
+    <section class="page-hero section-wrap"><p class="eyebrow accent-dark">PORTAFOLIO</p><h1>Obras que convierten ingeniería en <em>resultados concretos.</em></h1><p>El brochure suministrado registra proyectos desarrollados entre 1985 y 2013 en hoteles, hospitales, viviendas, comunidades y escenarios deportivos.</p></section>
+    <section class="portfolio section-wrap">
+      {categories.map(category => (
+        <div class="portfolio-group">
+          <div class="group-title"><span>{String(projects.filter(project => project.category === category).length).padStart(2,'0')}</span><h2>{category}</h2></div>
+          <div class="project-grid">{projects.filter(project => project.category === category).map(project => <ProjectCard project={project} />)}</div>
+        </div>
+      ))}
+    </section>
+    <section class="additional-projects section-wrap"><div><p class="eyebrow">REGISTROS ADICIONALES</p><h2>Obras mencionadas en la <em>portada del brochure.</em></h2><p class="source-note">El documento identifica estas instalaciones por nombre y fotografía, pero no suministra año ni capacidad. Se presentan sin completar datos no verificables.</p></div><div class="simple-grid">{supplementaryProjects.map(project => <article><h3>{project.name}</h3><p>{project.note}</p></article>)}</div></section>
+    <ContactSection />
+  </main>
+</BaseLayout>

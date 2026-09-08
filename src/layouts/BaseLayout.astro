@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Eficiencia Energética Aplicada',
+  description = 'Soluciones integrales de eficiencia energética para hogares, instituciones y empresas.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#06383b" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2306383b%22/><circle cx=%2250%22 cy=%2250%22 r=%2223%22 fill=%22%23f2cf3a%22/></svg>" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Eficiencia Energética Aplicada, inicio">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>eficiencia<br /><b>energética aplicada</b></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="/soluciones/">Soluciones</a>
+        <a href="/proyectos/">Proyectos</a>
+        <a href="/#experiencia">Experiencia</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+      <a class="button button-small" href="/#contacto">Solicitar diagnóstico <span>↗</span></a>
+    </header>
+    <slot />
+    <footer class="site-footer section-wrap">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>eficiencia<br /><b>energética aplicada</b></span>
+      </a>
+      <div><strong>Ing. Jorge Enrique Bernal Trujillo</strong><a href="tel:+573104893193">+57 310 489 3193</a><a href="mailto:jorgebernal1954@gmail.com">jorgebernal1954@gmail.com</a></div>
+      <div><span>© {new Date().getFullYear()} Eficiencia Energética Aplicada S.A.S.</span><a href="#inicio">Volver arriba ↑</a></div>
+    </footer>
+  </body>
+</html>

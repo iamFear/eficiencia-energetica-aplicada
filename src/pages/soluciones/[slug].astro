@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import { services } from '../../data/site';
+
+export function getStaticPaths() {
+  return services.map(service => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const currentIndex = services.findIndex(item => item.slug === service.slug);
+const next = services[(currentIndex + 1) % services.length];
+---
+<BaseLayout title={`${service.title} | Eficiencia Energética Aplicada`} description={service.short}>
+  <main id="inicio">
+    <section class="solution-detail-hero section-wrap">
+      <a class="back-link" href="/soluciones/">← Todas las soluciones</a>
+      <div><p class="eyebrow accent-dark">SOLUCIÓN {service.number}</p><h1>{service.title}</h1><p>{service.short}</p></div>
+      <div class="solution-hero-image"><img src={service.image} alt={`Referencia visual de ${service.title}`} /></div>
+    </section>
+    <section class="service-sections section-wrap">
+      {service.sections.map(([title, text], index) => <article><span>{String(index + 1).padStart(2,'0')}</span><div><h2>{title}</h2><p>{text}</p></div></article>)}
+    </section>
+    {service.slug === 'calentamiento-solar' && <section class="benefits section-wrap"><p class="eyebrow">VENTAJAS DOCUMENTADAS</p><div class="benefit-grid">{['Segura: sin combustión en el punto de captación','Disponible: no depende de cortes de combustible','Abundante: aprovecha un recurso presente en Colombia','Versátil: aplicable a obra nueva o existente','Limpia: evita emisiones directas durante la captación','Renovable: reduce el uso de fuentes fósiles'].map(item => <div>{item}</div>)}</div><p class="source-note">Las cifras históricas de retorno y desempeño contenidas en el brochure deben confirmarse mediante un estudio técnico y financiero actualizado.</p></section>}
+    <section class="next-service section-wrap"><p>Siguiente solución</p><a href={`/soluciones/${next.slug}/`}><span>{next.number}</span>{next.title}<b>→</b></a></section>
+    <ContactSection />
+  </main>
+</BaseLayout>

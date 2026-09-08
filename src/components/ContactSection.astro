@@ -1,0 +1,38 @@
+<section class="contact" id="contacto">
+  <div class="contact-orb" aria-hidden="true"></div>
+  <div class="contact-grid section-wrap">
+    <div>
+      <p class="eyebrow accent">CONVERSEMOS</p>
+      <h2>Empiece a usar la energía con <em>inteligencia.</em></h2>
+      <p>Cuéntenos sobre su proyecto, su ubicación y la necesidad principal. Revisaremos el punto de partida y las opciones que mejor se ajusten al consumo y al espacio disponible.</p>
+      <div class="contact-details">
+        <a href="tel:+573104893193">+57 310 489 3193</a>
+        <a href="mailto:jorgebernal1954@gmail.com">jorgebernal1954@gmail.com</a>
+      </div>
+    </div>
+    <form id="contact-form" aria-label="Formulario de contacto">
+      <div class="field-row">
+        <label>Nombre<input required name="nombre" autocomplete="name" placeholder="Su nombre" /></label>
+        <label>Teléfono<input name="telefono" autocomplete="tel" placeholder="Número de contacto" /></label>
+      </div>
+      <label>Correo electrónico<input required type="email" name="correo" autocomplete="email" placeholder="nombre@empresa.com" /></label>
+      <label>Tipo de proyecto<select name="tipo"><option>Residencial</option><option>Hotelero</option><option>Hospitalario o institucional</option><option>Comercial</option><option>Piscina o jacuzzi</option><option>Otro</option></select></label>
+      <label>Cuéntenos de su proyecto<textarea required name="mensaje" rows="4" placeholder="Ubicación, necesidad y consumo aproximado"></textarea></label>
+      <button class="button button-accent" type="submit">Preparar consulta <span>↗</span></button>
+      <p class="form-note" id="form-status" aria-live="polite">Se abrirá su aplicación de correo con la información lista para enviar.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  const status = document.querySelector('#form-status');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const subject = encodeURIComponent(`Consulta web de ${data.get('nombre')}`);
+    const body = encodeURIComponent(`Nombre: ${data.get('nombre')}\nTeléfono: ${data.get('telefono')}\nCorreo: ${data.get('correo')}\nTipo: ${data.get('tipo')}\n\nProyecto:\n${data.get('mensaje')}`);
+    if (status) status.textContent = 'Abriendo su aplicación de correo…';
+    window.location.href = `mailto:jorgebernal1954@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
