@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/brand-theme.css';
 
 const {
   title = 'Eficiencia Energética Aplicada',
@@ -13,14 +14,17 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#06383b" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2306383b%22/><circle cx=%2250%22 cy=%2250%22 r=%2223%22 fill=%22%23f2cf3a%22/></svg>" />
+    <meta name="theme-color" content="#ffda00" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/brand/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Eficiencia Energética Aplicada, inicio">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img class="brand-logo" src="/brand/logo-eea.png" alt="" width="58" height="58" />
         <span>eficiencia<br /><b>energética aplicada</b></span>
       </a>
       <nav aria-label="Navegación principal">
@@ -34,7 +38,7 @@ const {
     <slot />
     <footer class="site-footer section-wrap">
       <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img class="brand-logo" src="/brand/logo-eea.png" alt="" width="66" height="66" loading="lazy" />
         <span>eficiencia<br /><b>energética aplicada</b></span>
       </a>
       <div><strong>Ing. Jorge Enrique Bernal Trujillo</strong><a href="tel:+573104893193">+57 310 489 3193</a><a href="mailto:jorgebernal1954@gmail.com">jorgebernal1954@gmail.com</a></div>
