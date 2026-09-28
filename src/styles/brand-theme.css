@@ -154,7 +154,24 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
   border-top: 8px solid var(--accent);
 }
 
-input:focus, textarea:focus, select:focus { border-color: var(--accent-strong); }
+.contact form :is(input, textarea, select) {
+  caret-color: var(--ink-deep);
+  transition: border-color 160ms ease;
+}
+
+.contact form :is(input, textarea, select):focus,
+.contact form :is(input, textarea, select):focus-visible {
+  outline: none !important;
+  outline-offset: 0;
+  box-shadow: none !important;
+  filter: none;
+  background: transparent;
+  border-bottom-color: var(--ink-deep);
+}
+
+.contact form label:has(:is(input, textarea, select):focus) {
+  color: #665500;
+}
 
 .site-footer {
   background: var(--accent);
