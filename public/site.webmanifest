@@ -1,0 +1,19 @@
+{
+  "name": "Eficiencia Energética Aplicada",
+  "short_name": "EEA",
+  "icons": [
+    {
+      "src": "/brand/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffda00",
+  "background_color": "#fff9df",
+  "display": "standalone"
+}
