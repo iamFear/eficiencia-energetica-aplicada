@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://eficienciaenergeticaaplicada.com',
+  site: 'https://www.efienergetica.com',
 });

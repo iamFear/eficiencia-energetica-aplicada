@@ -21,7 +21,7 @@ export const projects: Project[] = [
     year: "1996",
     solution: "Calentador solar de agua",
     capacity: "15.000 litros",
-    image: "/images/projects/hotel-dann-carlton-medellin.jpg",
+image: "/images/projects/hotel-dann-carlton-medellin.webp",
     summary:
       "Sistema solar térmico para atender la demanda de agua caliente del hotel.",
   },
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     year: "2004",
     solution: "Calentador solar de agua",
     capacity: "10.000 litros",
-    image: "/images/projects/hotel-dann-carlton-barranquilla.jpg",
+    image: "/images/projects/hotel-dann-carlton-barranquilla.webp",
     summary:
       "Instalación de colectores solares en cubierta para agua caliente de uso hotelero.",
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     year: "2007",
     solution: "Calentador solar de agua",
     capacity: "5.000 litros",
-    image: "/images/projects/hotel-pavillon-bogota.jpg",
+    image: "/images/projects/hotel-pavillon-bogota.webp",
     summary:
       "Sistema solar térmico integrado a una edificación hotelera urbana.",
   },
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     year: "2008",
     solution: "Calentador solar de agua",
     capacity: "18.000 litros",
-    image: "/images/projects/hotel-estelar-milla-de-oro.jpg",
+    image: "/images/projects/hotel-estelar-milla-de-oro.webp",
     summary:
       "Solución de gran volumen para el suministro continuo de agua caliente.",
   },
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     year: "2011",
     solution: "Calentador solar de agua",
     capacity: "24.000 litros",
-    image: "/images/projects/hospital-san-vicente-rionegro.jpg",
+    image: "/images/projects/hospital-san-vicente-rionegro.webp",
     summary:
       "Campo de colectores instalado en cubierta para una demanda institucional intensiva.",
   },
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     year: "2011",
     solution: "Calentador solar de agua",
     capacity: "25.000 litros",
-    image: "/images/projects/hospital-general-medellin.jpg",
+    image: "/images/projects/hospital-general-medellin.webp",
     summary:
       "Sistema solar térmico de alta capacidad para una instalación hospitalaria.",
   },
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     year: "1990",
     solution: "Calentador solar de agua",
     capacity: "22.500 litros",
-    image: "/images/projects/hospital-pablo-tobon-uribe.jpg",
+    image: "/images/projects/hospital-pablo-tobon-uribe.webp",
     summary:
       "Una instalación de gran escala documentada dentro del portafolio histórico.",
   },
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     year: "1999",
     solution: "Calentador solar de agua",
     capacity: "10.000 litros",
-    image: "/images/projects/clinica-policia-envigado.jpg",
+    image: "/images/projects/clinica-policia-envigado.webp",
     summary:
       "Sistema de colectores y almacenamiento para agua caliente institucional.",
   },
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     year: "2013",
     solution: "Calentador solar de agua",
     capacity: "23.000 litros",
-    image: "/images/projects/edificio-ankara-bogota.jpg",
+    image: "/images/projects/edificio-ankara-bogota.webp",
     summary: "Extenso campo de colectores solares para vivienda multifamiliar.",
   },
   {
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     year: "2010",
     solution: "Calentador solar de agua",
     capacity: "22.000 litros",
-    image: "/images/projects/parque-musica-barquisimeto.jpg",
+    image: "/images/projects/parque-musica-barquisimeto.webp",
     summary: "Aplicación internacional de energía solar térmica en vivienda.",
   },
   {
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     year: "2010",
     solution: "Calentador solar de agua",
     capacity: "22.000 litros · 3 torres",
-    image: "/images/projects/sierras-del-este-bogota.jpg",
+    image: "/images/projects/sierras-del-este-bogota.webp",
     summary: "Sistema compartido para tres torres residenciales.",
   },
   {
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     year: "1985",
     solution: "Calentador solar de agua",
     capacity: "1.500 litros",
-    image: "/images/projects/casa-santo-domingo-baru.jpg",
+    image: "/images/projects/casa-santo-domingo-baru.webp",
     summary: "Solución residencial autónoma en un entorno insular.",
   },
   {
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     year: "2006",
     solution: "Calentador solar de agua",
     capacity: "4.000 litros",
-    image: "/images/projects/hermanas-capuchinas-medellin.jpg",
+    image: "/images/projects/hermanas-capuchinas-medellin.webp",
     summary: "Colectores y almacenamiento para una comunidad institucional.",
   },
   {
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     year: "2000",
     solution: "Calentador solar de agua",
     capacity: "500 litros",
-    image: "/images/projects/colegio-anunciacion-medellin.jpg",
+    image: "/images/projects/colegio-anunciacion-medellin.webp",
     summary:
       "Sistema compacto de calentamiento solar en una institución educativa.",
   },
@@ -198,7 +198,7 @@ export const projects: Project[] = [
     year: "1990",
     solution: "Calentador solar de agua",
     capacity: "3.000 litros",
-    image: "/images/projects/instituto-sagrado-corazon-manizales.jpg",
+    image: "/images/projects/instituto-sagrado-corazon-manizales.webp",
     summary:
       "Instalación térmica solar para demanda de una comunidad educativa.",
   },
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     year: "1993",
     solution: "Calentador solar de agua",
     capacity: "3.000 litros",
-    image: "/images/projects/colegio-san-ignacio-medellin.jpg",
+    image: "/images/projects/colegio-san-ignacio-medellin.webp",
     summary: "Sistema solar térmico institucional instalado en cubierta.",
   },
   {
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     year: "2009",
     solution: "Climatización solar de piscina",
     capacity: "500 m³",
-    image: "/images/projects/polideportivo-universidad-andes.jpg",
+    image: "/images/projects/polideportivo-universidad-andes.webp",
     summary: "Campo de colectores para climatizar una piscina de gran volumen.",
   },
   {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     year: "1994",
     solution: "Climatización solar de piscina",
     capacity: "468 m³",
-    image: "/images/projects/polideportivo-sur-envigado.jpg",
+    image: "/images/projects/polideportivo-sur-envigado.webp",
     summary:
       "Aplicación solar térmica para mantener el confort del agua en un escenario deportivo.",
   },
@@ -263,7 +263,7 @@ export const services = [
     title: "Calentadores solares de agua",
     short:
       "Agua caliente para usos domésticos, hoteleros, industriales e institucionales.",
-    image: "/images/source/brochure-p05-01.jpg",
+    image: "/images/source/brochure-p05-01.webp",
     sections: [
       [
         "Aplicación",
@@ -289,7 +289,7 @@ export const services = [
     title: "Bombas de calor y deshumidificación",
     short:
       "Apoyo eficiente para agua caliente, piscinas, jacuzzis y secado de ropa.",
-    image: "/images/source/document-01.png",
+    image: "/images/source/document-01.webp",
     sections: [
       [
         "Cómo funciona",
@@ -315,7 +315,7 @@ export const services = [
     title: "Energía solar fotovoltaica",
     short:
       "Generación eléctrica para autoconsumo, respaldo y reducción de compras a la red.",
-    image: "/images/source/brochure-p01-01.jpg",
+    image: "/images/source/brochure-p01-01.webp",
     sections: [
       [
         "Sistemas aislados",
@@ -340,7 +340,7 @@ export const services = [
     number: "04",
     title: "Iluminación LED",
     short: "Más luz útil con menor consumo, mantenimiento y carga térmica.",
-    image: "/images/source/brochure-p05-01.jpg",
+    image: "/images/source/brochure-p05-01.webp",
     sections: [
       [
         "Ahorro",
@@ -366,7 +366,7 @@ export const services = [
     title: "Calentamiento de piscinas y jacuzzis",
     short:
       "Climatización de alto volumen o alta temperatura con solar térmica y bombas de calor.",
-    image: "/images/projects/polideportivo-universidad-andes.jpg",
+    image: "/images/projects/polideportivo-universidad-andes.webp",
     sections: [
       [
         "Solución",
@@ -388,7 +388,7 @@ export const services = [
     title: "Piso radiante y climatización",
     short:
       "Calor uniforme para alcobas, salas, baños y otros espacios de permanencia.",
-    image: "/images/source/document-02.png",
+    image: "/images/source/document-02.webp",
     sections: [
       [
         "Confort",
@@ -413,7 +413,7 @@ export const services = [
     number: "07",
     title: "Gestión y ahorro de agua",
     short: "Menor consumo y aprovechamiento de aguas lluvias y grises.",
-    image: "/images/source/brochure-p01-01.jpg",
+    image: "/images/source/brochure-p01-01.webp",
     sections: [
       [
         "Reducción de consumo",
@@ -438,7 +438,7 @@ export const services = [
     number: "08",
     title: "Cocción y equipos eficientes",
     short: "Selección de tecnologías domésticas de alta eficiencia.",
-    image: "/images/source/brochure-p05-01.jpg",
+    image: "/images/source/brochure-p05-01.webp",
     sections: [
       [
         "Cocción por inducción",
@@ -460,7 +460,7 @@ export const services = [
     title: "Residuos y soluciones especiales",
     short:
       "Manejo integral de residuos, secado, destilación y arquitectura bioclimática.",
-    image: "/images/source/brochure-p05-01.jpg",
+    image: "/images/source/brochure-p05-01.webp",
     sections: [
       [
         "MIRS",

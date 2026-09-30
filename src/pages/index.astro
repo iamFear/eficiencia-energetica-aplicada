@@ -5,16 +5,35 @@ import ProjectCard from '../components/ProjectCard.astro';
 import { projects, services, supplementaryProjects } from '../data/site';
 
 const featuredProjects = [projects[4], projects[8], projects[0], projects[16], projects[14], projects[11]];
+const site = Astro.site ?? Astro.url;
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': new URL('/#organizacion', site).href,
+  name: 'Eficiencia Energética Aplicada S.A.S.',
+  url: new URL('/', site).href,
+  logo: new URL('/brand/logo-eea.png', site).href,
+  email: 'jorgebernal1954@gmail.com',
+  telephone: '+57 310 489 3193',
+  description: 'Soluciones de energía solar, eficiencia energética, climatización y gestión del agua para viviendas e instituciones.',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'asesoría técnica',
+    telephone: '+57 310 489 3193',
+    email: 'jorgebernal1954@gmail.com',
+    availableLanguage: 'Spanish',
+  },
+};
 ---
 
-<BaseLayout title="Eficiencia Energética Aplicada | Ingeniería para usar mejor la energía">
+<BaseLayout title="Energía solar y eficiencia energética | Eficiencia Energética Aplicada" description="Soluciones de calentamiento solar de agua, bombas de calor y energía fotovoltaica para viviendas, hoteles, hospitales y piscinas. Consulte nuestro portafolio." preloadImage="/images/source/brochure-p01-01.webp" structuredData={organization}>
   <main id="inicio">
     <section class="hero hero-photo">
-      <img src="/images/source/brochure-p01-01.jpg" alt="Proyectos de energía solar térmica de Eficiencia Energética Aplicada" />
+      <img src="/images/source/brochure-p01-01.webp" alt="Portafolio de sistemas solares térmicos de Eficiencia Energética Aplicada" width="1240" height="1608" decoding="async" fetchpriority="high" />
       <div class="hero-overlay"></div>
       <div class="hero-copy section-wrap">
         <p class="eyebrow accent">INGENIERÍA · ENERGÍA · CONFORT</p>
-        <h1>Mayor Ahorro,<br />Más bienestar</h1>
+        <h1>Energía solar<br />para ahorrar más</h1>
         <p>Diseñamos soluciones para aprovechar el sol, reducir costos de operación y hacer más eficientes hogares, hoteles, hospitales, clínicas, piscinas, jacuzzis y proyectos inmobiliarios.</p>
         <div class="hero-actions">
           <a class="button button-accent" href="#contacto">Solicitar diagnóstico <span>↗</span></a>
@@ -56,7 +75,7 @@ const featuredProjects = [projects[4], projects[8], projects[0], projects[16], p
     </section>
 
     <section class="solar-explainer section-wrap">
-      <div class="explainer-image"><img src="/images/projects/edificio-ankara-bogota.jpg" alt="Campo de colectores solares del Edificio Ankara en Bogotá" loading="lazy" /></div>
+      <div class="explainer-image"><img src="/images/projects/edificio-ankara-bogota.webp" alt="Campo de colectores solares del Edificio Ankara en Bogotá" width="410" height="272" loading="lazy" decoding="async" /></div>
       <div class="explainer-copy">
         <p class="eyebrow">POR QUÉ ENERGÍA SOLAR TÉRMICA</p>
         <h2>El calor del sol trabaja todos los días</h2>
@@ -71,13 +90,13 @@ const featuredProjects = [projects[4], projects[8], projects[0], projects[16], p
         <p class="eyebrow accent">COMPARACIÓN DE FUENTES DE CALOR</p>
         <h2>Elegir bien cambia el costo de toda la operación</h2>
         <div class="comparison-table" role="table" aria-label="Comparación de fuentes de calor">
-          <div class="comparison-row comparison-head" role="row"><span>Criterio</span><b>Solar</b><b>Combustible Fósil</b><b>Electricidad</b></div>
-          <div class="comparison-row" role="row"><span>Fuente</span><b>Sol</b><b>Combustible</b><b>Energía Eléctrica</b></div>
-          <div class="comparison-row" role="row"><span>Costo del calor</span><b>Bajo en operación</b><b>Alto</b><b>Muy alto</b></div>
-          <div class="comparison-row" role="row"><span>Emisiones directas de GEI</span><b>Cero</b><b>Altas</b><b>Dependientes de la red</b></div>
-          <div class="comparison-row" role="row"><span>Obtención de calor</span><b>Gradual</b><b>Rápida</b><b>Media</b></div>
-          <div class="comparison-row" role="row"><span>Almacenamiento Requerido</span><b>Alto</b><b>Bajo</b><b>Medio</b></div>
-          <div class="comparison-row" role="row"><span>Mantenimiento</span><b>Simple</b><b>Complejo</b><b>Bajo</b></div>
+          <div class="comparison-row comparison-head" role="row"><span role="columnheader">Criterio</span><b role="columnheader">Solar</b><b role="columnheader">Combustible Fósil</b><b role="columnheader">Electricidad</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Fuente</span><b role="cell">Sol</b><b role="cell">Combustible</b><b role="cell">Energía Eléctrica</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Costo del calor</span><b role="cell">Bajo en operación</b><b role="cell">Alto</b><b role="cell">Muy alto</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Emisiones directas de GEI</span><b role="cell">Cero</b><b role="cell">Altas</b><b role="cell">Dependientes de la red</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Obtención de calor</span><b role="cell">Gradual</b><b role="cell">Rápida</b><b role="cell">Media</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Almacenamiento requerido</span><b role="cell">Alto</b><b role="cell">Bajo</b><b role="cell">Medio</b></div>
+          <div class="comparison-row" role="row"><span role="rowheader">Mantenimiento</span><b role="cell">Simple</b><b role="cell">Complejo</b><b role="cell">Bajo</b></div>
         </div>
         <p class="source-note">Síntesis del comparativo incluido en el documento técnico suministrado. El desempeño final depende del diseño, la energía de respaldo y las condiciones del proyecto.</p>
       </div>

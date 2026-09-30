@@ -1,11 +1,23 @@
 ---
+import '@fontsource-variable/dm-sans/wght.css';
+import '@fontsource/dm-mono/latin-400.css';
+import '@fontsource/dm-mono/latin-500.css';
+import '@fontsource/playfair-display/latin-600.css';
+import '@fontsource/playfair-display/latin-600-italic.css';
 import '../styles/global.css';
 import '../styles/brand-theme.css';
 
 const {
   title = 'Eficiencia Energética Aplicada',
   description = 'Soluciones integrales de eficiencia energética para hogares, instituciones y empresas.',
+  image = '/images/source/brochure-p01-01.jpg',
+  preloadImage,
+  structuredData,
 } = Astro.props;
+
+const site = Astro.site ?? new URL('https://www.efienergetica.com');
+const canonical = new URL(Astro.url.pathname, site).href;
+const socialImage = new URL(image, site).href;
 ---
 
 <!doctype html>
@@ -15,6 +27,21 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#ffda00" />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Eficiencia Energética Aplicada" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/brand/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
@@ -22,9 +49,10 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <a class="skip-link" href="#inicio">Saltar al contenido</a>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Eficiencia Energética Aplicada, inicio">
-        <img class="brand-logo" src="/brand/logo-eea.png" alt="" width="58" height="58" />
+        <img class="brand-logo" src="/brand/logo-eea-small.webp" alt="" width="58" height="58" />
         <span>eficiencia<br /><b>energética aplicada</b></span>
       </a>
       <nav aria-label="Navegación principal">
@@ -33,12 +61,21 @@ const {
         <a href="/#experiencia">Experiencia</a>
         <a href="/#contacto">Contacto</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menú</summary>
+        <nav aria-label="Navegación móvil">
+          <a href="/soluciones/">Soluciones</a>
+          <a href="/proyectos/">Proyectos</a>
+          <a href="/#experiencia">Experiencia</a>
+          <a href="/#contacto">Contacto</a>
+        </nav>
+      </details>
       <a class="button button-small" href="/#contacto">Solicitar diagnóstico <span>↗</span></a>
     </header>
     <slot />
     <footer class="site-footer section-wrap">
       <a class="brand" href="/">
-        <img class="brand-logo" src="/brand/logo-eea.png" alt="" width="66" height="66" loading="lazy" />
+        <img class="brand-logo" src="/brand/logo-eea-small.webp" alt="" width="66" height="66" loading="lazy" />
         <span>eficiencia<br /><b>energética aplicada</b></span>
       </a>
       <div><strong>Ing. Jorge Enrique Bernal Trujillo</strong><a href="tel:+573104893193">+57 310 489 3193</a><a href="mailto:jorgebernal1954@gmail.com">jorgebernal1954@gmail.com</a></div>

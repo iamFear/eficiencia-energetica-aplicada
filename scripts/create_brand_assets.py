@@ -24,6 +24,7 @@ def main() -> None:
     logo = logo.filter(ImageFilter.UnsharpMask(radius=0.7, percent=115, threshold=2))
 
     contain(logo, 768, 24).save(BRAND / "logo-eea.png", optimize=True)
+    contain(logo, 128, 4).save(BRAND / "logo-eea-small.png", optimize=True)
 
     # The favicon keeps the complete mark on its brand-yellow field.
     favicon = Image.new("RGBA", (512, 512), (255, 218, 0, 255))

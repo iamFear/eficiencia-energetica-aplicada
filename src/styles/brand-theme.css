@@ -1,4 +1,5 @@
 :root {
+  --sans: 'DM Sans Variable', Arial, sans-serif;
   --accent: #f7d117;
   --accent-strong: #e7be00;
   --accent-soft: #fff1a8;
@@ -6,9 +7,27 @@
   --paper: #fdfbf4;
 }
 
+html { scroll-padding-top: 90px; }
 ::selection { background: var(--accent); color: var(--ink-deep); }
 :focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 4px; }
 html { scrollbar-color: var(--accent-strong) var(--paper); }
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 16px;
+  z-index: 200;
+  padding: 9px 14px;
+  background: var(--accent);
+  color: var(--ink-deep);
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: none; }
+.mobile-menu { display: none; }
+.project-photo { margin: 0; }
+.project-photo img { display: block; width: 100%; height: min(62vw, 650px); object-fit: cover; }
+.project-photo figcaption { padding: 10px 0; font-size: 12px; color: var(--muted); }
+.site-footer > div a { display: inline-flex; align-items: center; min-height: 28px; }
 
 /* Recupera la composición original del navbar: claro, compacto y contenido. */
 .site-header {
@@ -54,6 +73,10 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 
 .hero-proof div { border-right-color: rgba(3, 41, 44, 0.22); }
 .hero-proof strong, .hero-proof span { color: var(--ink-deep); }
+
+@media (min-width: 851px) {
+  .hero-copy { padding-bottom: clamp(95px, 12vh, 130px); }
+}
 
 .intro .eyebrow,
 .solar-explainer .eyebrow,
@@ -147,6 +170,7 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 }
 
 .benefits { border-top: 10px solid var(--accent); }
+.benefits .source-note { color: #d5e0dc !important; }
 .next-service > a:hover { background: var(--accent); }
 
 .contact form {
@@ -183,6 +207,23 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 
 @media (max-width: 850px) {
   .site-header { height: 70px; padding-inline: 20px; }
+  .mobile-menu { display: block; margin-left: auto; margin-right: 14px; }
+  .mobile-menu summary { cursor: pointer; font-size: 13px; font-weight: 700; padding: 10px; }
+  .site-header .mobile-menu nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    top: 69px;
+    left: 0;
+    right: 0;
+    padding: 12px 20px 18px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 18px rgba(3, 41, 44, .12);
+  }
+  .site-header .mobile-menu nav a { padding: 11px 4px; }
+  .project-photo img { height: 430px; }
   .brand-logo { width: 42px; height: 42px; }
   .hero { min-height: calc(100svh - 70px); }
   .hero-copy { padding-top: clamp(42px, 7vh, 65px); padding-bottom: 190px; }
@@ -195,6 +236,8 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 }
 
 @media (max-width: 520px) {
+  .mobile-menu { margin-right: 6px; }
+  .project-photo img { height: 290px; }
   .brand-logo { width: 40px; height: 40px; }
   .site-header .brand span { max-width: 116px; }
   .intro .eyebrow,

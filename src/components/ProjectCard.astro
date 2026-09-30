@@ -4,7 +4,7 @@ const { project } = Astro.props as { project: Project };
 ---
 <article class="project-card">
   <a class="project-image" href={`/proyectos/${project.slug}/`}>
-    <img src={project.image} alt={`Instalación en ${project.name}`} loading="lazy" width="820" height="560" />
+    <img src={project.image} alt={`${project.solution} en ${project.name}, ${project.city}`} loading="lazy" decoding="async" width="410" height="272" />
     <span>Ver ficha ↗</span>
   </a>
   <div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
