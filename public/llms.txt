@@ -1,19 +1,26 @@
 # Eficiencia Energética Aplicada S.A.S.
 
-Sitio en español sobre soluciones de energía solar y eficiencia energética.
+> Empresa de soluciones de energía solar, eficiencia energética y gestión del agua para viviendas, hoteles e instituciones, principalmente en Colombia.
+
 Contacto técnico: Ing. Jorge Enrique Bernal Trujillo, +57 310 489 3193, jorgebernal1954@gmail.com.
 
-## Páginas principales
+## Contenido principal
 
-- Inicio: https://www.efienergetica.com/
-- Soluciones: https://www.efienergetica.com/soluciones/
-- Proyectos: https://www.efienergetica.com/proyectos/
-- Mapa del sitio: https://www.efienergetica.com/sitemap.xml
+- [Inicio](https://www.efienergetica.com/): Presentación de la empresa, experiencia y contacto.
+- [Soluciones](https://www.efienergetica.com/soluciones/): Catálogo de nueve áreas de trabajo y sus criterios técnicos.
+- [Proyectos](https://www.efienergetica.com/proyectos/): Portafolio histórico con fichas, fotografías, fechas y capacidades documentadas.
 
-## Áreas de trabajo
+## Soluciones destacadas
 
-Calentadores solares de agua, bombas de calor, energía fotovoltaica, iluminación LED, climatización de piscinas y espacios, ahorro de agua, equipos eficientes y soluciones bioclimáticas.
+- [Calentadores solares de agua](https://www.efienergetica.com/soluciones/calentadores-solares-de-agua/): Aplicaciones, tecnologías y respaldo para agua caliente.
+- [Bombas de calor](https://www.efienergetica.com/soluciones/bombas-de-calor/): Calentamiento de agua y deshumidificación.
+- [Energía solar fotovoltaica](https://www.efienergetica.com/soluciones/energia-fotovoltaica/): Sistemas aislados y conectados a la red.
+- [Piscinas y jacuzzis](https://www.efienergetica.com/soluciones/piscinas-y-jacuzzis/): Climatización solar, con bomba de calor o híbrida.
 
-## Alcance de la evidencia
+## Nota sobre la evidencia
 
 El portafolio publicado incluye 18 fichas con años entre 1985 y 2013. Las cifras de capacidad corresponden a esos proyectos históricos. El sitio no confirma el estado operativo actual de cada instalación ni garantiza ahorros o retornos para proyectos nuevos.
+
+## Optional
+
+- [Mapa del sitio](https://www.efienergetica.com/sitemap.xml): Listado completo de las páginas públicas.
