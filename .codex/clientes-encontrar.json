@@ -1,0 +1,13 @@
+{
+  "project": "Energia",
+  "company": "Eficiencia Energética Aplicada S.A.S.",
+  "title": "Leads — Eficiencia Energética Aplicada S.A.S.",
+  "provider": "google_sheets",
+  "spreadsheetId": "1dut1n8BW1N8oJTzjxsjBSyCykTetBY-5oVAHDBzoFBk",
+  "url": "https://docs.google.com/spreadsheets/d/1dut1n8BW1N8oJTzjxsjBSyCykTetBY-5oVAHDBzoFBk/edit",
+  "sheets": {
+    "clients": "Clientes",
+    "partners": "Socios"
+  },
+  "lastUpdated": "2026-10-05"
+}

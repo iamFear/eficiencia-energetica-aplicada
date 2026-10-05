@@ -2,6 +2,7 @@
 # Archivos de salida de build
 dist/
 .astro/
+.lighthouseci/
 
 # Dependencias
 node_modules/

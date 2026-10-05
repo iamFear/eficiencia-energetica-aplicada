@@ -1,0 +1,47 @@
+name: Lighthouse
+
+on:
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse 100
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir y validar el sitio
+        run: npm run build
+
+      - name: Instalar Lighthouse CI
+        run: npm install --global @lhci/cli@0.15.1
+
+      - name: Medir todas las páginas
+        run: lhci collect
+
+      - name: Exigir 100 en las cuatro categorías
+        run: lhci assert
+
+      - name: Guardar informes de Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          include-hidden-files: true
+          if-no-files-found: ignore
