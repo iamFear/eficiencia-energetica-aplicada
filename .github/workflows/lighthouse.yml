@@ -31,7 +31,7 @@ jobs:
       - name: Instalar Lighthouse CI
         run: npm install --global @lhci/cli@0.15.1
 
-      - name: Medir todas las páginas
+      - name: Medir la landing
         run: lhci collect --url=http://localhost/
 
       - name: Exigir 100 en las cuatro categorías
