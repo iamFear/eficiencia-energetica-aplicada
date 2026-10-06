@@ -19,7 +19,7 @@ jobs:
       - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
           cache: npm
 
       - name: Instalar dependencias
@@ -32,7 +32,7 @@ jobs:
         run: npm install --global @lhci/cli@0.15.1
 
       - name: Medir todas las páginas
-        run: lhci collect
+        run: lhci collect --url=http://localhost/
 
       - name: Exigir 100 en las cuatro categorías
         run: lhci assert
