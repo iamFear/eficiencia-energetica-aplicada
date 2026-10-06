@@ -21,7 +21,7 @@ export const projects: Project[] = [
     year: "1996",
     solution: "Calentador solar de agua",
     capacity: "15.000 litros",
-image: "/images/projects/hotel-dann-carlton-medellin.webp",
+    image: "/images/projects/hotel-dann-carlton-medellin.webp",
     summary:
       "Sistema solar térmico para atender la demanda de agua caliente del hotel.",
   },
@@ -100,8 +100,7 @@ image: "/images/projects/hotel-dann-carlton-medellin.webp",
     solution: "Calentador solar de agua",
     capacity: "22.500 litros",
     image: "/images/projects/hospital-pablo-tobon-uribe.webp",
-    summary:
-      "Una instalación de gran escala documentada dentro del portafolio histórico.",
+    summary: "Una instalación hospitalaria de gran escala.",
   },
   {
     slug: "clinica-policia-envigado",
@@ -244,14 +243,14 @@ image: "/images/projects/hotel-dann-carlton-medellin.webp",
 export const supplementaryProjects = [
   {
     name: "Hospital Manuel Uribe Ángel",
-    note: "Instalación solar térmica hospitalaria documentada en la portada del brochure.",
+    note: "Instalación solar térmica hospitalaria.",
   },
   {
     name: "Guaduales de Patio Bonito",
     note: "Instalación de colectores solares en un conjunto de vivienda.",
   },
   {
-    name: "Finca Barbosa, Popayán",
+    name: "Finca Barbosa, Popalito",
     note: "Sistema residencial con colectores solares en cubierta.",
   },
 ];
