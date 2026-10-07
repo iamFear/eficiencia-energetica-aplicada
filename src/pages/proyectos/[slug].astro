@@ -23,20 +23,20 @@ const schema = {
   ],
 };
 ---
-<BaseLayout title={`${project.name}: ${project.solution} | EEA`} description={`${project.name} en ${location}: ${project.solution.toLowerCase()}, ${project.capacity} documentados en ${project.year}.`} image={project.image} structuredData={schema}>
+<BaseLayout title={`${project.name}: ${project.solution} | EEA`} description={`${project.name} en ${location}: ${project.solution.toLowerCase()}, ${project.capacity} en ${project.year}.`} image={project.image} structuredData={schema}>
   <main id="inicio">
     <section class="project-detail-hero section-wrap">
       <a class="back-link" href="/proyectos/">← Todos los proyectos</a>
       <div class="detail-title"><div><p class="eyebrow accent-dark">{project.category} · {project.year}</p><h1>{project.name}</h1><p>{project.summary}</p></div><div class="detail-number">{project.year}</div></div>
-      <figure class="project-photo"><img src={project.image} alt={`${project.solution} en ${project.name}, ${location}`} width="410" height="272" decoding="async" fetchpriority="high" /><figcaption>Registro del portafolio de Eficiencia Energética Aplicada · {project.year}</figcaption></figure>
+      <figure class="project-photo"><img src={project.image} alt={`${project.solution} en ${project.name}, ${location}`} width="410" height="272" decoding="async" fetchpriority="high" /></figure>
     </section>
     <section class="project-facts section-wrap">
       <div><span>Ubicación</span><strong>{project.city}, {project.country}</strong></div>
       <div><span>Solución</span><strong>{project.solution}</strong></div>
-      <div><span>Capacidad documentada</span><strong>{project.capacity}</strong></div>
+      <div><span>Capacidad</span><strong>{project.capacity}</strong></div>
       <div><span>Año</span><strong>{project.year}</strong></div>
     </section>
-    <section class="detail-story section-wrap"><div><p class="eyebrow">FICHA DEL PORTAFOLIO</p><h2>{project.solution} en {project.city}</h2></div><div><p>{project.summary} El portafolio registra para {project.name} una capacidad de {project.capacity} en {project.year}, en {location}.</p><p>Estos datos y la fotografía proceden del brochure corporativo. Describen el proyecto documentado en esa fecha; no indican su estado de operación actual. Para una propuesta nueva se deben revisar los consumos, el lugar y las condiciones técnicas vigentes.</p><a class="text-link" href={solutionUrl}>Conocer la solución técnica <span aria-hidden="true">→</span></a></div></section>
+    <section class="detail-story section-wrap"><div><p class="eyebrow">EL PROYECTO</p><h2>{project.solution} en {project.city}</h2></div><div><p>{project.summary} Capacidad de {project.capacity}, instalada en {project.year} en {location}.</p><a class="text-link" href={solutionUrl}>Conocer la solución técnica <span aria-hidden="true">→</span></a></div></section>
     {related.length > 0 && <section class="related section-wrap"><div class="section-heading"><div><p class="eyebrow">PROYECTOS RELACIONADOS</p><h2>Más experiencia en {project.category.toLowerCase()}.</h2></div></div><div class="project-grid">{related.map(item => <ProjectCard project={item} />)}</div></section>}
     <ContactSection />
   </main>

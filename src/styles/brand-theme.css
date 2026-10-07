@@ -170,7 +170,6 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 }
 
 .benefits { border-top: 10px solid var(--accent); }
-.benefits .source-note { color: #d5e0dc !important; }
 .next-service > a:hover { background: var(--accent); }
 
 .contact form {
