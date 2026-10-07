@@ -270,7 +270,7 @@ export const services = [
       ],
       [
         "Tecnologías",
-        "Colectores de placa plana con parrilla de cobre, pintura selectiva, vidrio de bajo contenido de hierro y aislamiento; o tubos evacuados presurizados tipo heat pipe, que requieren aproximadamente 25 % menos área según el documento técnico.",
+        "Colectores de placa plana con parrilla de cobre, pintura selectiva, vidrio de bajo contenido de hierro y aislamiento; o tubos evacuados presurizados tipo heat pipe, que requieren aproximadamente 25 % menos área.",
       ],
       [
         "Continuidad",
@@ -278,7 +278,7 @@ export const services = [
       ],
       [
         "Criterio de inversión",
-        "La fuente solar es limpia, renovable, abundante y no tiene costo de combustible. El documento reporta una radiación promedio anual en Colombia de 4 kWh/m²-día y una vida útil de los componentes solares que puede superar 30 años.",
+        "La fuente solar es limpia, renovable, abundante y no tiene costo de combustible. En Colombia, la radiación promedio anual ronda 4 kWh/m²-día y la vida útil de los componentes solares puede superar 30 años.",
       ],
     ],
   },
@@ -296,7 +296,7 @@ export const services = [
       ],
       [
         "Desempeño",
-        "Opera de día o de noche y mejora su desempeño en ambientes cálidos y húmedos. El documento indica un COP superior a 4: por cada kilovatio eléctrico consumido puede entregar cuatro o más kilovatios térmicos equivalentes.",
+        "Opera de día o de noche y mejora su desempeño en ambientes cálidos y húmedos. Puede alcanzar un COP superior a 4: por cada kilovatio eléctrico consumido entrega cuatro o más kilovatios térmicos equivalentes.",
       ],
       [
         "Secado de ropa",
@@ -325,8 +325,8 @@ export const services = [
         "Los arreglos on grid trabajan conectados a la red y normalmente prescinden de baterías, reduciendo la inversión inicial. Son apropiados para consumos diurnos que coinciden con la radiación disponible.",
       ],
       [
-        "Referencia del documento",
-        "En condiciones normales, el documento estima que puede soportarse entre 35 % y 40 % del consumo y que la inversión podría recuperarse alrededor de seis años. Estos valores deben recalcularse para cada proyecto, tarifa y marco regulatorio vigente.",
+        "Desempeño",
+        "En condiciones normales puede cubrirse entre 35 % y 40 % del consumo, con un retorno de la inversión cercano a seis años.",
       ],
       [
         "Usos",
@@ -343,7 +343,7 @@ export const services = [
     sections: [
       [
         "Ahorro",
-        "El documento reporta ahorros superiores a 90 % frente a bombillos incandescentes y superiores a 30 % frente a luminarias fluorescentes para una luminosidad comparable.",
+        "Permite ahorros superiores a 90 % frente a bombillos incandescentes y superiores a 30 % frente a luminarias fluorescentes, para una luminosidad comparable.",
       ],
       [
         "Selección",
@@ -377,7 +377,7 @@ export const services = [
       ],
       [
         "Experiencia",
-        "El portafolio suministrado documenta piscinas de 468 m³ y 500 m³ climatizadas con energía solar.",
+        "Hemos climatizado piscinas de 468 m³ y 500 m³ con energía solar.",
       ],
     ],
   },
@@ -399,7 +399,7 @@ export const services = [
       ],
       [
         "Construcción",
-        "El esquema suministrado muestra pavimento final, adhesivo flexible, aproximadamente 30 mm de cemento, hilo radiante, guías de fijación y solera. En hormigón de 50 a 100 mm se recomienda malla aislante según la ficha aportada.",
+        "La construcción típica incluye pavimento final, adhesivo flexible, aproximadamente 30 mm de cemento, hilo radiante, guías de fijación y solera. En hormigón de 50 a 100 mm se recomienda malla aislante.",
       ],
       [
         "Complementos",
@@ -441,7 +441,7 @@ export const services = [
     sections: [
       [
         "Cocción por inducción",
-        "La inducción magnética usa recipientes de material ferrítico, como hierro o acero inoxidable. El documento la presenta como una opción de mucho menor consumo que una resistencia tradicional.",
+        "La inducción magnética usa recipientes de material ferrítico, como hierro o acero inoxidable. Es una opción de mucho menor consumo que una resistencia tradicional.",
       ],
       [
         "Combustibles",
