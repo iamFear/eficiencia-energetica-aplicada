@@ -205,7 +205,9 @@ html { scrollbar-color: var(--accent-strong) var(--paper); }
 .site-footer .brand-logo { width: 64px; height: 64px; }
 
 @media (max-width: 850px) {
+  .site-footer a[href="#inicio"] { display: none; }
   .site-header { height: 70px; padding-inline: 20px; }
+  .site-header > .button-small { display: none; }
   .mobile-menu { display: block; margin-left: auto; margin-right: 14px; }
   .mobile-menu summary { cursor: pointer; font-size: 13px; font-weight: 700; padding: 10px; }
   .site-header .mobile-menu nav {
