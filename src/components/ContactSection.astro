@@ -10,16 +10,18 @@
         <a href="mailto:jorgebernal1954@gmail.com">jorgebernal1954@gmail.com</a>
       </div>
     </div>
-    <form id="contact-form" aria-label="Formulario de contacto">
+    <form id="contact-form" method="post" action="/api/contacto" aria-label="Formulario de contacto">
       <div class="field-row">
-        <label>Nombre<input required name="nombre" autocomplete="name" placeholder="Su nombre" /></label>
-        <label>Teléfono<input name="telefono" autocomplete="tel" placeholder="Número de contacto" /></label>
+        <label>Nombre<input required name="nombre" maxlength="120" autocomplete="name" placeholder="Su nombre" /></label>
+        <label>Teléfono<input type="tel" name="telefono" maxlength="40" autocomplete="tel" placeholder="Número de contacto" /></label>
       </div>
-      <label>Correo electrónico<input required type="email" name="correo" autocomplete="email" placeholder="nombre@empresa.com" /></label>
+      <label>Correo electrónico<input required type="email" name="correo" maxlength="254" autocomplete="email" placeholder="nombre@empresa.com" /></label>
       <label>Tipo de proyecto<select name="tipo"><option>Residencial</option><option>Hotelero</option><option>Hospitalario o institucional</option><option>Comercial</option><option>Piscina o jacuzzi</option><option>Otro</option></select></label>
-      <label>Cuéntenos de su proyecto<textarea required name="mensaje" rows="4" placeholder="Ubicación, necesidad y consumo aproximado"></textarea></label>
-      <button class="button button-accent" type="submit">Preparar consulta <span>↗</span></button>
-      <p class="form-note" id="form-status" aria-live="polite">Se abrirá su aplicación de correo con la información lista para enviar.</p>
+      <label>Cuéntenos de su proyecto<textarea required name="mensaje" maxlength="4000" rows="4" placeholder="Ubicación, necesidad y consumo aproximado"></textarea></label>
+      <div hidden aria-hidden="true"><label>Sitio web<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <button class="button button-accent" type="submit">Enviar consulta <span>↗</span></button>
+      <p class="form-note" id="form-status" aria-live="polite">Envíenos sus datos y nos pondremos en contacto con usted.</p>
+      <noscript>Active JavaScript para enviar el formulario o contáctenos por teléfono o correo.</noscript>
     </form>
   </div>
 </section>
@@ -27,12 +29,30 @@
 <script>
   const form = document.querySelector<HTMLFormElement>('#contact-form');
   const status = document.querySelector('#form-status');
-  form?.addEventListener('submit', (event) => {
+  form?.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (!button || button.disabled) return;
     const data = new FormData(form);
-    const subject = encodeURIComponent(`Consulta web de ${data.get('nombre')}`);
-    const body = encodeURIComponent(`Nombre: ${data.get('nombre')}\nTeléfono: ${data.get('telefono')}\nCorreo: ${data.get('correo')}\nTipo: ${data.get('tipo')}\n\nProyecto:\n${data.get('mensaje')}`);
-    if (status) status.textContent = 'Abriendo su aplicación de correo…';
-    window.location.href = `mailto:jorgebernal1954@gmail.com?subject=${subject}&body=${body}`;
+    button.disabled = true;
+    form.setAttribute('aria-busy', 'true');
+    if (status) status.textContent = 'Enviando su consulta…';
+    try {
+      const response = await fetch('/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+        signal: AbortSignal.timeout(20_000),
+      });
+      if (!response.ok) throw new Error('No se pudo enviar');
+      const result = await response.json();
+      if (status) status.textContent = result.message;
+      form.reset();
+    } catch {
+      if (status) status.textContent = 'No pudimos confirmar el envío. Sus datos se conservaron. Contáctenos por teléfono o correo, o intente más tarde.';
+    } finally {
+      button.disabled = false;
+      form.removeAttribute('aria-busy');
+    }
   });
 </script>

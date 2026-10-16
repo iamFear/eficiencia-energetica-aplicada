@@ -21,7 +21,7 @@ For business questions, consult `Brochure eea.pdf` and `eficiencia energética 
 - `npm run build`: run `astro check`, generate `dist/`, and verify canonical URLs, metadata, JSON-LD, links, and sitemap.
 - `npm run preview`: inspect the built site locally after a successful build.
 
-No test framework, formatter, linter, or `npm test` script is configured.
+Contact API tests use Node.js's built-in runner: `node --test tests/contact-handler.test.mjs`. No formatter, linter, or `npm test` script is configured.
 
 ## Coding Style & Naming Conventions
 

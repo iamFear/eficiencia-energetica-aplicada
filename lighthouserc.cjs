@@ -18,7 +18,7 @@ const urls = htmlFiles(distDir)
   )
   .sort();
 
-if (urls.length === 0) {
+if (urls.length === 0) {``
   throw new Error(
     "No se encontraron páginas HTML en dist/. Ejecuta npm run build primero.",
   );
